@@ -15,7 +15,7 @@ if (!uri) {
  * Fix: store the client on `globalThis`, which survives hot reloads,
  * and reuse it if it already exists.
  */
-const globalForMongo = globalThis as unknown as {
+const globalForMongo = globalThis  as unknown as  {
   _mongoClient?: MongoClient;
 };
 
@@ -31,3 +31,7 @@ if (process.env.NODE_ENV !== "production") {
 // client.db() with no argument uses the database name written in the URI
 // (the "bazardor" part). Better Auth will create its collections inside it.
 export const db = client.db("bazardor");
+
+
+
+
